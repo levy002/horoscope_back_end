@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -18,3 +19,5 @@ mongoose
     app.listen(PORT);
   })
   .catch((err) => console.log(err));
+
+  app.use(authRoutes);
